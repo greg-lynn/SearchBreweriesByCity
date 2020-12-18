@@ -1,7 +1,8 @@
 'use strict'
 
 function formatQueryParams(params) {
-  const queryItems = Object.keys(params).map(key => `${[endodeURIComponent(key)]}=${encodeURIComponents(params[key])}`);
+  const queryItems = Object.keys(params)
+    .map(key => `${key}=${params[key]}`);
   return queryItems.join('&');
 }
 
@@ -21,3 +22,37 @@ function displayResults(responseJson) {
   }
   $('.results').removeClass('hidden');
 }
+
+function getBreweries(baseUrl, stateArray) {
+  const params = {
+    state: stateArray
+  }
+
+  const queryString = formatQueryParams(params);
+  const url = baseUrl + '?' + queryString;
+  console.log(url);
+
+  fetch(url)
+  .then(response => {
+    if (response.ok) {
+      return response.json();
+    }
+    throw new Error(response.statusText);
+  })
+  .then(responseJson => displayResults(responseJson))
+  .catch(err => {
+    $('.js-error').text(`Something went wrong: ${err.message}`);
+  });
+}
+
+function watchForm() {
+  $('.js-form').on('submit', function() {
+    event.preventDefault();
+    const baseUrl = 'https://api.openbrewerydb.org/breweries'
+    const stateArr = $('.js-state-entered').val();
+
+    getBreweries(baseUrl, stateArr);
+  })
+}
+
+$(watchForm);
