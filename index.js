@@ -11,21 +11,19 @@ function displayResults(responseJson) {
   $('.js-error').empty();
   $('js-results').empty();
 
-  for (let i = 0; i < responseJson.data.length; i++) {
+  for (let i = 0; i < responseJson.length; i++) {
     $('.results-list').append(`
-    <ol><li><h3><a href="${responseJson.data[i].url}">${responseJson.data[i].name}</a></h3>
-    <p><b>${responseJson.data[i].phone}</b></p>
-    <p><b>Type:</b> ${responseJson.data[i].breweryType}</p>
-    <p><b><a href="https://google.com/maps">${responseJson.data[i].street.city}</b></p>
-    </li>
-    </ol>`);
+    <li><h3><a href="${responseJson[i].url}">${responseJson[i].name}</a></h3>
+    <p><b>${responseJson[i].phone}</b></p>
+    <p><b>Type:</b> ${responseJson[i].brewery_type}</p>
+    </li>`);
   }
   $('.results').removeClass('hidden');
 }
 
 function getBreweries(baseUrl, stateArray) {
   const params = {
-    state: stateArray
+    by_state: stateArray
   }
 
   const queryString = formatQueryParams(params);
