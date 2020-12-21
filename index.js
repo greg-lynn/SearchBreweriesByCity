@@ -16,7 +16,9 @@ function displayResults(responseJson) {
     <li><h3><a href="${responseJson[i].website_url}">${responseJson[i].name}</a></h3>
     <p><b>${responseJson[i].phone}</b></p>
     <p><b>Type:</b> ${responseJson[i].brewery_type}</p>
-    <p><b>[embedded map goes here]</b></p>
+    <p><b>City:</b> ${responseJson[i].city}</p>
+    <p><b>[embedded map goes here]</b> ${responseJson[i].longitude}</p>
+    <br>
     </li>`);
   }
   $('.results').removeClass('hidden');
