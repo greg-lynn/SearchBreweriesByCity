@@ -17,7 +17,7 @@ function displayResults(responseJson) {
     <p><b>${responseJson[i].phone}</b></p>
     <p><b>Type:</b> ${responseJson[i].brewery_type}</p>
     <p><b>City:</b> ${responseJson[i].city}</p>
-    <p><b>[embedded map goes here]</b></p>
+    <p><b>[embedded map goes here]</b><a href="#" onClick="window.open('https://www.google.com/maps/search/?api=1&query=39.38204685,-77.3995969')"><img border="0" src= "https://open.mapquestapi.com/staticmap/v5/map?key=TUoC6xHGAdj2alufTnAXPlfaWukzre0d&amp;center=39.38204685,-77.3995969&amp;locations=39.38204685,-77.3995969&amp;zoom=10&amp;size=600,400" alt="Brewery Search"></a></p>
     <br>
     </li>`);
   }
