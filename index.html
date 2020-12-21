@@ -10,25 +10,35 @@
         <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     </head>
 
-    <body>
-        <div class="container">
+    <body>          
+        <div>
+            <div class="container-1">
+                <div class="box-1">
             <h1>Search Breweries By State:</h1>
 
             <form class="js-form">
-                <label for="search-term"><b>Enter a State:</b></label>
+                <label for="search-term"><h2><b>Enter a State:</b></h2></label>
                 <input type="text" name="search-term" class="js-state-entered" placeholder="Colorado" required>
                 <br>
                 <br>
 
                 <input type="submit" value="Beer Me!">
             </form>
+                </div>
+            </div>
 
             <p class="js-error"></p>
 
-            <section class="results hidden" role="region">
+            <div class="container-2">
+            <section class="results-hidden" role="region">
+                <div class="box-2">
                 <h2>Search results: </h2>
+                </div>
+                <div class="box-3">
                 <ul class="results-list" style="list-style-type:none;">
                 </ul>
+                </div>
+            </div>
             </section>
         </div>
         <script src="index.js"></script>
