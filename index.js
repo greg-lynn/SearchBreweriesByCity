@@ -9,8 +9,7 @@ function formatQueryParams(params) {
 function displayResults(responseJson) {
   console.log(responseJson);
   $('.js-error').empty();
-  $('js-results').empty();
-  /*$('.js-results-list').html(displayResults); I am trying to clear results before displaying new results*/
+  $('.results-list').empty();
 
   for (let i = 0; i < responseJson.length; i++) {
     $('.results-list').append(`
