@@ -10,14 +10,15 @@ function displayResults(responseJson) {
   console.log(responseJson);
   $('.js-error').empty();
   $('js-results').empty();
+  /*$('.js-results-list').html(displayResults); I am trying to clear results before displaying new results*/
 
   for (let i = 0; i < responseJson.length; i++) {
     $('.results-list').append(`
     <li><h3><a href="${responseJson[i].website_url}">${responseJson[i].name}</a></h3>
-    <p><b>${responseJson[i].phone}</b></p>
     <p><b>Type:</b> ${responseJson[i].brewery_type}</p>
-    <p><b>City:</b> ${responseJson[i].city}</p>
-    <p><b>[embedded map goes here]</b><a href="#" onClick="window.open('https://www.google.com/maps/search/?api=1&query=39.38204685,-77.3995969')"><img border="0" src= "https://open.mapquestapi.com/staticmap/v5/map?key=TUoC6xHGAdj2alufTnAXPlfaWukzre0d&amp;center=39.38204685,-77.3995969&amp;locations=39.38204685,-77.3995969&amp;zoom=10&amp;size=600,400" alt="Brewery Search"></a></p>
+    <p><b><a href="${responseJson[i].phone}">${responseJson[i].phone}</a></b></p>
+    <p><b><a href="#" onClick="window.open('https://www.google.com/maps/search/?api=1&query=${responseJson[i].latitude},${responseJson[i].longitude}')"></p>Address:</b> ${responseJson[i].street}, ${responseJson[i].city}</a></p>
+    <a href="#" onClick="window.open('https://www.google.com/maps/search/?api=1&query=${responseJson[i].latitude},${responseJson[i].longitude}')"><img border="0" src= "https://open.mapquestapi.com/staticmap/v5/map?key=TUoC6xHGAdj2alufTnAXPlfaWukzre0d&center=${responseJson[i].latitude},${responseJson[i].longitude}&location=${responseJson[i].latitude},${responseJson[i].longitude};zoom=10&amp;size=400,200" alt="Brewery Search"></a></p>
     <br>
     </li>`);
   }
