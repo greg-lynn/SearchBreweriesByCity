@@ -15,7 +15,7 @@ function displayResults(responseJson) {
     $('.results-list').append(`
     <li><h3><a href="${responseJson[i].website_url}">${responseJson[i].name}</a></h3>
     <p><b>Type:</b> ${responseJson[i].brewery_type}</p>
-    <p><b><a href="${responseJson[i].phone}">${responseJson[i].phone}</a></b></p>
+    <p><b>Phone: <a href="tel:${responseJson[i].phone}">${responseJson[i].phone}</a></b></p>
     <p><b>Address: <a href="#" onClick="window.open('https://www.google.com/maps/search/?api=1&query=${responseJson[i].latitude},${responseJson[i].longitude}')"></b> ${responseJson[i].street}, ${responseJson[i].city}</a></p>
     <a href="#" onClick="window.open('https://www.google.com/maps/search/?api=1&query=${responseJson[i].latitude},${responseJson[i].longitude}')"><img border="0" src= "https://open.mapquestapi.com/staticmap/v5/map?key=TUoC6xHGAdj2alufTnAXPlfaWukzre0d&center=${responseJson[i].latitude},${responseJson[i].longitude}&location=${responseJson[i].latitude},${responseJson[i].longitude};zoom=10&amp;size=400,200" alt="Brewery Search"></a></p>
     <br>
