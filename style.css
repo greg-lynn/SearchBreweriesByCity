@@ -57,6 +57,11 @@ img {
   max-width: 100%;
 }
 
+hr {
+  max-width: 80%;
+  border-top: 1px dashed black;
+}
+
 @media screen and (min-width: 800px) {
   .conatiner-1 div {
     width: 40%;

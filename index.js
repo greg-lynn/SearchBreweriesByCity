@@ -19,6 +19,8 @@ function displayResults(responseJson) {
     <p><b>Address: <a href="#" onClick="window.open('https://www.google.com/maps/search/?api=1&query=${responseJson[i].latitude},${responseJson[i].longitude}')"></b> ${responseJson[i].street}, ${responseJson[i].city}</a></p>
     <a href="#" onClick="window.open('https://www.google.com/maps/search/?api=1&query=${responseJson[i].latitude},${responseJson[i].longitude}')"><img border="0" src= "https://open.mapquestapi.com/staticmap/v5/map?key=TUoC6xHGAdj2alufTnAXPlfaWukzre0d&center=${responseJson[i].latitude},${responseJson[i].longitude}&location=${responseJson[i].latitude},${responseJson[i].longitude};zoom=10&amp;size=400,200" alt="Brewery Search"></a></p>
     <br>
+    <hr>
+    <br>
     </li>`);
   }
   $('.results').removeClass('hidden');
