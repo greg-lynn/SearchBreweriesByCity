@@ -7,7 +7,7 @@ https://greg-lynn.github.io/SearchBreweriesByState/
 
 ## Summary
 
-This app is used to search for breweries in a select State. The user enters a State of interest, then the app returns breweries in that state. It also returns the Name, Url, type of brewery, phone number (with link), address (with link), and a clickable map.
+This app is used to search for breweries in a select State. The user enters a State of interest, then the app returns breweries in that state. It also returns the name, url, type of brewery, phone number (with link), address (with link), and a clickable map.
 
 ## Technology Used
 
